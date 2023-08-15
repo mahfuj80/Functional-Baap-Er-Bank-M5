@@ -1,3 +1,5 @@
+// DRY-----> DO NOT REPEAT YOURSELF ------>   USE FUNCTION
+
 document.getElementById('btn-deposit').addEventListener('click', function () {
     /* 
     1. get the element by id
@@ -5,6 +7,9 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     3. convert string value to a number
     */
     const newDepositAmount = getInputFieldValueById('deposit-field');
+    if (isNaN(newDepositAmount)) {
+        return alert('please provide me a number');
+    }
     /* 
     1. get previous deposit total by id
     */
